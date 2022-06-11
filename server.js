@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const app = express();
 const lead = require('./routes/leaderboard');
+const frootyLead = require('./routes/frooty-leaderboard');
 const cors = require('cors');
 
 // Bodyparser middleware
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/', lead);
+app.use('/', frootyLead);
 // DB Config
 const db = require("./config/keys").mongoURI;
 // Connect to MongoDB
